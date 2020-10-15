@@ -27,7 +27,10 @@ def to_int(x):
     return int(x)
 
 
-# Зчитуємо дані в dataframe з csv та форматуємо їх
+# Знімаємо обмеження по кількості стовбців
+pd.set_option('display.max_columns', None)
+
+# Зчитуємо дані в датафрейм з csv та форматуємо їх
 data = pd.read_csv('values.csv', sep=';',
                    converters={
                        'day/month': date_fix,
@@ -55,5 +58,6 @@ data['day/month'] = pd.to_datetime(data['day/month'])
 data = data.set_index(["day/month"])
 
 # print(data)
+
 # Викликаємо модуль для побудови класів
 plt.plot_options(data)
