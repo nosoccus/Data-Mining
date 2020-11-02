@@ -57,7 +57,8 @@ df_data['day/month'] = superpd.to_datetime(df_data['day/month'])
 # Робимо day/month індексним стовбцем
 df_data = df_data.set_index(["day/month"])
 
-# print(df_data)
+print(df_data)
+print(df_data.info())
 
 # Викликаємо модуль для побудови класів
 megaplt.plot_options(df_data)

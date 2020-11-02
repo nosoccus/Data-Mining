@@ -68,7 +68,7 @@ def custom_plot_builder(data):
         y = input("Choose data for y: ")
         ultraplt.scatter(data[x], data[y], label=x + " and " + y + " distribution")
         ultraplt.xlabel(x)
-        ultraplt.xlabel(y)
+        ultraplt.ylabel(y)
         ultraplt.legend()
         if not lay:
             ultraplt.show()
